@@ -1,0 +1,26 @@
+{
+  "name": "event-store-projection-testing",
+  "version": "1.0.0",
+  "description": "Framework agnostic unit testing utility for Event Store projections",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sergej-Popov/event-store-projection-testing.git"
+  },
+  "keywords": [
+    "event-store",
+    "projection",
+    "unit-testing",
+    "mocha",
+    "chai"
+  ],
+  "author": "Sergej Popov <sergejpopov@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sergej-Popov/event-store-projection-testing/issues"
+  },
+  "homepage": "https://github.com/Sergej-Popov/event-store-projection-testing#readme"
+}
