@@ -29,8 +29,8 @@
 
 // these $ globals are defined by external environment
 // they are redefined here to make R# like tools understand them
-var _log = $log;
-var _load_module = $load_module;
+var _log = console.log;
+var _load_module = function() { };
 
 function log(message) {
   _log("PROJECTIONS (JS): " + message);
@@ -39,7 +39,7 @@ function log(message) {
 function initializeModules() {
   // load module load new instance of the given module every time
   // this is a responsibility of prelude to manage instances of modules
-  var modules = _load_module('Modules');
+  var modules = require('./Modules');
 
   // TODO: replace with createRequire($load_module)
   modules.$load_module = _load_module;
@@ -48,7 +48,7 @@ function initializeModules() {
 }
 
 function initializeProjections() {
-  var projections = _load_module('Projections');
+  var projections = require('./Projections');
   return projections;
 }
 
@@ -287,4 +287,4 @@ function scope($on, $notify) {
   };
 };
 
-scope;
+module.exports = scope;

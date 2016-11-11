@@ -45,4 +45,4 @@ var $modules = (function () {
   return modules;
 })();
 
-$modules;
+module.exports = $modules;
