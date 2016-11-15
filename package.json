@@ -1,6 +1,6 @@
 {
   "name": "event-store-projection-testing",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Framework agnostic unit testing utility for Event Store projections",
   "main": "index.js",
   "scripts": {
