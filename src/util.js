@@ -29,6 +29,10 @@ function util() {
     self.state = self.commandHandlers.process_event(event, true, streamId, eventType, undefined);
   };
 
+  self.getTransform = function () {
+      return JSON.parse(self.commandHandlers.transform_state_to_result());
+  };
+
   this.initialize = function() {
     self.emittedEvents = [];
     self.commandHandlers.initialize();
