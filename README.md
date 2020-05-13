@@ -1,4 +1,4 @@
-Framework agnostic unit testing utility for Event Store projections
+Test utility for Event Store projections
 
 ## Usage
 Add utility to projection
@@ -50,6 +50,3 @@ describe('Projection tests', function() {
   });
 });
 ```
-
-
-More complete instructions available [on my blog](http://scriptology.net/2016/11/09/unit-test-event-store-projections-with-mocha)

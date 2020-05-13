@@ -5,35 +5,36 @@ function util() {
 
   self.commandHandlers = {};
 
-  var $on = function(name, commandHandler) {
+  var $on = function (name, commandHandler) {
     self.commandHandlers[name] = commandHandler;
   };
 
   self.emittedEvents = [];
 
-  var $notify = function(action, event) {
+  var $notify = function (action, event) {
     if (action === 'emit')
       self.emittedEvents.push(JSON.parse(event));
   };
 
   self.scope = require('../prelude/1Prelude')($on, $notify);
-  self.getState = function() {
+  self.getState = function () {
     return JSON.parse(self.commandHandlers.debugging_get_state());
   };
 
-  self.setState = function(state) {
+  self.setState = function (state) {
     self.commandHandlers.set_state(JSON.stringify(state));
   };
 
-  self.processEvent = function(streamId, eventType, event) {
+  self.processEvent = function (streamId, eventType, event) {
     self.state = self.commandHandlers.process_event(event, true, streamId, eventType, undefined);
   };
 
   self.getTransform = function () {
-      return JSON.parse(self.commandHandlers.transform_state_to_result());
+    var transform = self.commandHandlers.transform_state_to_result();
+    return transform && JSON.parse(transform);
   };
 
-  this.initialize = function() {
+  this.initialize = function () {
     self.emittedEvents = [];
     self.commandHandlers.initialize();
   };
