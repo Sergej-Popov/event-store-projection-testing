@@ -1,6 +1,6 @@
 {
   "name": "event-store-projection-testing",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Test utility for Event Store projections",
   "main": "index.js",
   "scripts": {
@@ -25,6 +25,6 @@
   "homepage": "https://github.com/Sergej-Popov/event-store-projection-testing#readme",
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^7.1.2"
+    "mocha": "^8.2.1"
   }
 }

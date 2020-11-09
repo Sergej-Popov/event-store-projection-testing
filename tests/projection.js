@@ -5,10 +5,11 @@ var emit = emit || require('../src/util').scope.emit;
 fromAll()
   .when({
     '$init': function () {
-      return { balance: 0, counter: 0 }
+      return { balance: 0, counter: 0, lastCorrelationId: null }
     },
     '$any': function (state, event) {
       state.counter++;
+      state.lastCorrelationId = event.metadata?.correlationId;
     },
     'cashDeposited': function (state, event) {
       state.balance += event.data.deposit;

@@ -25,8 +25,8 @@ function util() {
     self.commandHandlers.set_state(JSON.stringify(state));
   };
 
-  self.processEvent = function (streamId, eventType, event) {
-    self.state = self.commandHandlers.process_event(event, true, streamId, eventType, undefined);
+  self.processEvent = function (streamId, eventType, event, metadata) {
+    self.state = self.commandHandlers.process_event(event, true, streamId, eventType, undefined, undefined, JSON.stringify(metadata));
   };
 
   self.getTransform = function () {
